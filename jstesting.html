@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>Type some text</h2>
+        <textarea name="Magic" class="text-box" id="input-1">This is content</textarea>
+    
+    <div class="result" id="gimp">The box says : "This is content"</div>
+    <script>
+        const textarea = document.querySelector(".text-box");
+        
+        const changeContent = (event) => {
+            const currentId = event.target.getAttribute('id')
+            const result = document.querySelector('.result');
+            result.textContent = `${currentId} box says : "${event.target.value}"`;
+        }
+        textarea.addEventListener('change', changeContent);
+        
+    </script>
+</body>
+</html>
